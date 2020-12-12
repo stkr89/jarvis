@@ -45,3 +45,10 @@ Let's break down this file to understand what each component means
 A Task is an independent unit of work that gets executed as part of the workflow.
 A config file can contain any number of tasks. These can be a combination
 of any type of task that is supported by Jarvis
+#### Task type
+A task type defines the kind of work that Jarvis need to perform. In this case
+it's a http `GET` request. Jarvis supports following http methods:
+- `GET`
+- `POST`
+- `PUT`
+- `DELETE`

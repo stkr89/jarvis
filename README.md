@@ -76,3 +76,12 @@ auth:
 ```
 `bearer_token` authentication adds a header field in the form of 
 `Authorization: Bearer <token>`.
+##### Custom
+```yaml
+auth:
+  custom:
+    my_header_1: value1
+    my_header_2: value2
+```
+`custom` authentication adds headers `my_header_1` and `my_header_2` with values 
+`value` and `value2` respectively.

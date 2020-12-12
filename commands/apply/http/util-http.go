@@ -17,6 +17,10 @@ func execute(h *model.TaskTypeHttp) (*http.Response, error) {
 			req.Header.Add("Authorization", "Basic "+basicAuth(h.Auth.Basic.Username, h.Auth.Basic.Password))
 		} else if h.Auth.BearerToken != nil {
 			req.Header.Add("Authorization", "Bearer "+h.Auth.BearerToken.Token)
+		} else if h.Auth.Custom != nil {
+			for k, v := range h.Auth.Custom {
+				req.Header.Add(k, v)
+			}
 		}
 	}
 

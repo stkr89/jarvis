@@ -8,8 +8,9 @@ type TaskTypeHttp struct {
 }
 
 type Auth struct {
-	Basic       *AuthBasic       `yaml:"basic"`
-	BearerToken *AuthBearerToken `yaml:"bearer_token"`
+	Basic       *AuthBasic        `yaml:"basic"`
+	BearerToken *AuthBearerToken  `yaml:"bearer_token"`
+	Custom      map[string]string `yaml:"custom"`
 }
 
 type AuthBasic struct {

@@ -20,8 +20,8 @@ tasks:
         url: https://reqres.in/api/users
         auth:
           basic:
-            username: ${username}
-            password: ${password}
+            username: username
+            password: password
 ```
 Use following command to verify if the `config.yml` is valid.
 ```
@@ -46,8 +46,8 @@ http:
   url: https://reqres.in/api/users
   auth:
     basic:
-      username: ${username}
-      password: ${password}
+      username: username
+      password: password
 ```
 `http` tasks are responsible for performing actions that require interaction with 
 a RESTful endpoint. It has following properties:

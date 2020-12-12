@@ -24,6 +24,8 @@ func Verify() func(c *cli.Context) error {
 			return nil
 		}
 
+		color.Green.Println("Looks good!")
+
 		return nil
 	}
 }

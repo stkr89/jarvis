@@ -38,18 +38,20 @@ func processApply(tasks *model.Tasks) error {
 		color.Green.Printf("executing task: %s\n", t.Name)
 
 		for _, processor := range processors {
-			err := processor(t.TaskType)
+			response, err := processor(t.TaskType)
 			if err != nil {
 				return err
 			}
+
+			color.Green.Println(response)
 		}
 	}
 
 	return nil
 }
 
-func getProcessors() []func(taskType *model.TaskType) error {
-	return []func(taskType *model.TaskType) error{
+func getProcessors() []func(taskType *model.TaskType) (string, error) {
+	return []func(taskType *model.TaskType) (string, error){
 		http.ProcessTaskTypeHttp,
 	}
 }

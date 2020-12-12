@@ -8,7 +8,7 @@ type TaskTypeHttp struct {
 }
 
 type Auth struct {
-	Basic *AuthBasic `yaml:"basic" validate:"required"`
+	Basic *AuthBasic `yaml:"basic"`
 }
 
 type AuthBasic struct {

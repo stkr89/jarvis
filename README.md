@@ -9,7 +9,6 @@ Following are some benefits of automating your workflows using Jarvis:
 - Executed by an automation server (eg, Jenkins)
 - Keep the process consistent and free from manual errors
 
----
 Here is simple `config.yml` file that can be processed by Jarvis.
 ```yaml
 tasks:

@@ -40,6 +40,15 @@ of any type of task that is supported by Jarvis.
 A task type defines the kind of work that Jarvis need to perform. Jarvis supports
 following type of tasks:
 ### HTTP
+```
+http:
+  method: GET
+  url: https://reqres.in/api/users
+  auth:
+    basic:
+      username: ${username}
+      password: ${password}
+```
 `http` tasks are responsible for performing actions that require interaction with 
 a RESTful endpoint. It has following properties:
 #### Method
@@ -50,3 +59,10 @@ a RESTful endpoint. It has following properties:
 - `DELETE`
 #### Url
 `url` takes the address of the RESTful endpoint where the request need to be made.
+#### Auth
+`auth` describes the type authentication scheme required by the RESTful endpoint. It
+supports following authentication schemes:
+##### Basic
+`basic` authentication adds a header field in the form of 
+Authorization: Basic <credentials>, where credentials is the Base64 encoding of 
+`username` and `password` joined by a single colon `:`.

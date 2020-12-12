@@ -8,3 +8,26 @@ Following are some benefits of automating your workflows using Jarvis:
 - Can work with environment variables
 - Can be executed by an automation server (eg, Jenkins)
 - Can keep the process consistent and free from manual errors
+
+Here is sample `yaml` file that can be processed by Jarvis
+```
+tasks:
+  - name: Make sample get request
+    task_type:
+      http:
+        method: GET
+        url: https://reqres.in/api/users?page=2
+        auth:
+          basic:
+            username: ${username}
+            password: ${password}
+  - name: Make sample post request
+    task_type:
+      http:
+        method: POST
+        url: https://reqbin.com/echo/post/json
+        auth:
+          basic:
+            username: ${username}
+            password: ${password}
+```

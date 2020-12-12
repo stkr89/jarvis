@@ -17,7 +17,7 @@ tasks:
     task_type:
       http:
         method: GET
-        url: https://reqres.in/api/users?page=2
+        url: https://reqres.in/api/users
         auth:
           basic:
             username: ${username}
@@ -40,3 +40,8 @@ To initiate execution, run following command
 ```
 jarvis apply ./config.yml
 ```
+Let's break down this file to understand what each component means
+##### Tasks
+A Task is an independent unit of work that gets executed as part of the workflow.
+A config file can contain any number of tasks. These can be a combination
+of any type of task that is supported by Jarvis

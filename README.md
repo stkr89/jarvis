@@ -44,10 +44,6 @@ following type of tasks:
 http:
   method: GET
   url: https://reqres.in/api/users
-  auth:
-    basic:
-      username: username
-      password: password
 ```
 `http` tasks are responsible for performing actions that require interaction with 
 a RESTful endpoint. It has following properties:
@@ -63,6 +59,20 @@ a RESTful endpoint. It has following properties:
 `auth` describes the type authentication scheme required by the RESTful endpoint. It
 supports following authentication schemes:
 ##### Basic
+```
+auth:
+  basic:
+    username: username
+    password: password
+```
 `basic` authentication adds a header field in the form of 
-`Authorization: Basic <credentials>`, where credentials is the Base64 encoding of 
+`Authorization: Basic <credentials>`, where `<credentials>` is the Base64 encoding of 
 `username` and `password` joined by a single colon `:`.
+##### Bearer Token
+```
+auth:
+  bearer_token:
+    token: token
+```
+`bearer_token` authentication adds a header field in the form of 
+`Authorization: Bearer <token>`.

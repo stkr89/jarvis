@@ -5,7 +5,7 @@ import (
 	"errors"
 	"github.com/go-playground/validator/v10"
 	"github.com/gookit/color"
-	"github.com/sumittokkar/arrow/model"
+	"github.com/stkr89/jarvis/model"
 	"github.com/urfave/cli/v2"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"

@@ -64,5 +64,5 @@ a RESTful endpoint. It has following properties:
 supports following authentication schemes:
 ##### Basic
 `basic` authentication adds a header field in the form of 
-Authorization: Basic <credentials>, where credentials is the Base64 encoding of 
+`Authorization: Basic <credentials>`, where credentials is the Base64 encoding of 
 `username` and `password` joined by a single colon `:`.

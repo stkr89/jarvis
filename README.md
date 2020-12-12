@@ -11,7 +11,7 @@ Following are some benefits of automating your workflows using Jarvis:
 
 ---
 Here is simple `config.yml` file that can be processed by Jarvis.
-```
+```yaml
 tasks:
   - name: Make sample get request
     task_type:
@@ -24,11 +24,11 @@ tasks:
             password: password
 ```
 Use following command to verify if the `config.yml` is valid.
-```
+```shell
 jarvis verify ./config.yml
 ```
 To initiate execution, run following command.
-```
+```shell
 jarvis apply ./config.yml
 ```
 Let's break down this file to understand what each component means.
@@ -40,7 +40,7 @@ of any type of task that is supported by Jarvis.
 A task type defines the kind of work that Jarvis need to perform. Jarvis supports
 following type of tasks:
 ### HTTP
-```
+```yaml
 http:
   method: GET
   url: https://reqres.in/api/users
@@ -59,7 +59,7 @@ a RESTful endpoint. It has following properties:
 `auth` describes the type authentication scheme required by the RESTful endpoint. It
 supports following authentication schemes:
 ##### Basic
-```
+```yaml
 auth:
   basic:
     username: username
@@ -69,7 +69,7 @@ auth:
 `Authorization: Basic <credentials>`, where `<credentials>` is the Base64 encoding of 
 `username` and `password` joined by a single colon `:`.
 ##### Bearer Token
-```
+```yaml
 auth:
   bearer_token:
     token: token

@@ -2,9 +2,9 @@ package apply
 
 import (
 	"github.com/gookit/color"
-	"github.com/sumittokkar/arrow/commands"
-	"github.com/sumittokkar/arrow/commands/apply/http"
-	"github.com/sumittokkar/arrow/model"
+	"github.com/stkr89/jarvis/commands"
+	"github.com/stkr89/jarvis/commands/apply/http"
+	"github.com/stkr89/jarvis/model"
 	"github.com/urfave/cli/v2"
 )
 

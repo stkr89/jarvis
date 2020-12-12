@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/sumittokkar/arrow/commands"
-	"github.com/sumittokkar/arrow/commands/apply"
+	"github.com/stkr89/jarvis/commands"
+	"github.com/stkr89/jarvis/commands/apply"
 	"log"
 	"os"
 

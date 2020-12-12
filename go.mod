@@ -1,4 +1,4 @@
-module github.com/sumittokkar/arrow
+module github.com/stkr89/jarvis
 
 go 1.14
 

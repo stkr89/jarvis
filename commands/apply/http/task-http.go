@@ -1,7 +1,7 @@
 package http
 
 import (
-	"github.com/sumittokkar/arrow/model"
+	"github.com/stkr89/jarvis/model"
 )
 
 func ProcessTaskTypeHttp(taskType *model.TaskType) (string, error) {

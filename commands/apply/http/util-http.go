@@ -2,7 +2,7 @@ package http
 
 import (
 	"encoding/base64"
-	"github.com/sumittokkar/arrow/model"
+	"github.com/stkr89/jarvis/model"
 	"net/http"
 	"time"
 )

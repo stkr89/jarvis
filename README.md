@@ -84,4 +84,4 @@ auth:
     my_header_2: value2
 ```
 `custom` authentication adds headers `my_header_1` and `my_header_2` with values 
-`value` and `value2` respectively.
+`value1` and `value2` respectively.

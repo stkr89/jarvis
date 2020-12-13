@@ -10,8 +10,6 @@ import (
 	"time"
 )
 
-var regex = regexp.MustCompile("^(\\${)?(.*?)}?$")
-
 func execute(h *model.TaskTypeHttp) (*http.Response, error) {
 	if h.Body == nil {
 		h.Body = make(map[string]string)
@@ -40,23 +38,25 @@ func execute(h *model.TaskTypeHttp) (*http.Response, error) {
 }
 
 func addAuthorizationHeaders(h *model.TaskTypeHttp, req *http.Request) {
+	regex := regexp.MustCompile("^(\\${)?(.*?)}?$")
+
 	if h.Auth.Basic != nil {
-		req.Header.Add("Authorization", "Basic "+basicAuth(h.Auth.Basic.Username, h.Auth.Basic.Password))
+		req.Header.Add("Authorization", "Basic "+basicAuth(h.Auth.Basic.Username, h.Auth.Basic.Password, regex))
 	} else if h.Auth.BearerToken != nil {
-		req.Header.Add("Authorization", "Bearer "+parseStringFromEnv(h.Auth.BearerToken.Token))
+		req.Header.Add("Authorization", "Bearer "+parseStringFromEnv(h.Auth.BearerToken.Token, regex))
 	} else if h.Auth.Custom != nil {
 		for k, v := range h.Auth.Custom {
-			req.Header.Add(k, parseStringFromEnv(v))
+			req.Header.Add(k, parseStringFromEnv(v, regex))
 		}
 	}
 }
 
-func basicAuth(username, password string) string {
-	auth := parseStringFromEnv(username) + ":" + parseStringFromEnv(password)
+func basicAuth(username, password string, regex *regexp.Regexp) string {
+	auth := parseStringFromEnv(username, regex) + ":" + parseStringFromEnv(password, regex)
 	return base64.StdEncoding.EncodeToString([]byte(auth))
 }
 
-func parseStringFromEnv(str string) string {
+func parseStringFromEnv(str string, regex *regexp.Regexp) string {
 	u := regex.FindAllStringSubmatch(str, -1)
 	if len(u[0]) == 3 {
 		str = u[0][2]

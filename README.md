@@ -76,7 +76,7 @@ auth:
 `basic` authentication adds a header field in the form of 
 `Authorization: Basic <credentials>`, where `<credentials>` is the Base64 encoding of 
 `username` and `password` joined by a single colon `:`.  
-You can also provide `username` and `password` via environment variables.
+> You can also provide `username` and `password` via environment variables.
 ```yaml
 basic:
     username: ${USERNAME}
@@ -90,7 +90,7 @@ auth:
 ```
 `bearer_token` authentication adds a header field in the form of 
 `Authorization: Bearer <token>`.
-You can also provide `token` via environment variable.
+> You can also provide `token` via environment variable.
 ```yaml
 auth:
   bearer_token:
@@ -105,7 +105,7 @@ auth:
 ```
 `custom` authentication adds headers `my_header_1` and `my_header_2` with values 
 `value1` and `value2` respectively.
-You can also provide value for the custom header via environment variable.
+> You can also provide value for the custom header via environment variable.
 ```yaml
 auth:
   custom:

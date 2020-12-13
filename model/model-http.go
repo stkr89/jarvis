@@ -1,10 +1,11 @@
 package model
 
 type TaskTypeHttp struct {
-	Method  string `yaml:"method" validate:"required,oneof=GET POST PUT DELETE"`
-	Url     string `yaml:"url" validate:"required,url"`
-	Timeout int    `yaml:"timeout" validate:"number"`
-	Auth    *Auth  `yaml:"auth"`
+	Url     string            `yaml:"url" validate:"required,url"`
+	Method  string            `yaml:"method" validate:"required,oneof=GET POST PUT DELETE"`
+	Body    map[string]string `yaml:"body"`
+	Timeout int               `yaml:"timeout" validate:"number"`
+	Auth    *Auth             `yaml:"auth"`
 }
 
 type Auth struct {

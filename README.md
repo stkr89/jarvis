@@ -45,6 +45,14 @@ http:
   method: GET
   url: https://reqres.in/api/users
 ```
+```yaml
+http:
+  url: https://reqres.in/api/users
+  method: POST
+  body:
+    firstName: foo
+    lastName: bar
+```
 `http` tasks are responsible for performing actions that require interaction with 
 a RESTful endpoint. It has following properties:
 #### Method

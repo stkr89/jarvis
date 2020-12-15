@@ -43,7 +43,7 @@ func processApply(tasks *model.Tasks) error {
 				return err
 			}
 
-			color.Green.Println(response)
+			color.Println(response)
 		}
 	}
 
